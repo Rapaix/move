@@ -19,8 +19,8 @@ public class TransactionConsumer {
     @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
     public void receiveTransaction(TransactionDTO transactionDTO) {
         transactionService.createTransaction(
-                transactionDTO.getFromUserId(),
-                transactionDTO.getToUserId(),
-                transactionDTO.getAmount()
+                transactionDTO.fromUserId(),
+                transactionDTO.toUserId(),
+                transactionDTO.amount()
         );
     }}
